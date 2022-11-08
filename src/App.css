@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: Verdana; 
+  background-color: bisque;
 }
 
 .App-logo {
@@ -12,7 +14,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.NavBar{
+  list-style-type: none;
+}
+.cart{
+  height: 50px;
+  width: 50px;
+}
+.greeting{
+  font-size: x-large;
+  color: gray;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
