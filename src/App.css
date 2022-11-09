@@ -14,12 +14,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.NavBar{
+ul{
   list-style-type: none;
 }
 .cart{
   height: 50px;
-  width: 50px;
+  width: 80px;
 }
 .greeting{
   font-size: x-large;
