@@ -1,13 +1,18 @@
 .App {
+  width:95vw;
+  display: flex;
   text-align: center;
   font-family: Verdana; 
   background-color: bisque;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.NavBar{
+  width: 95vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -25,19 +30,9 @@ ul{
   font-size: x-large;
   color: gray;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.card-img-top{
+  width: 5px;
+  height: 450px;
 }
 
 @keyframes App-logo-spin {

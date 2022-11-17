@@ -1,4 +1,4 @@
-import cart from '../imagenes/shoppingCart.png'
+import cart from "./shoppingCart.png"
 
 const CartWidget=()=>{
     return(

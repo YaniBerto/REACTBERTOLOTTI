@@ -1,20 +1,9 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
+import articulos from "../data/articulos";
 
 
-  const articulos = [
-        {
-          id: "1",
-          img: "../imagenes/colgante_fases_luna.jpg",
-          Descripcion: "Colgante Lunas",
-          Precio: "2500",},
-        {
-          id: "2",
-          img: "../imagenes/aro_flor_violeta_claro.jpg",
-          Descripcion: "Aro Flor Violeta",
-          Precio: "1500",
-        },
-  ];
+ 
 
 const ItemListContainer = ({greeting})=>{
 
@@ -31,7 +20,7 @@ const ItemListContainer = ({greeting})=>{
   return(
     <div>
       <h2>{greeting}</h2>
-      <ItemList />
+      <ItemList articulos={articles} />
     </div>
   );
 };

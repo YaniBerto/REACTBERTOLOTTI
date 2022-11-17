@@ -1,11 +1,13 @@
 import CartWidget from "./CartWidget";
 
+
+
 const NavBar=()=>{
     return(
-      <div>
+      <div ClassName="NavBar">
       <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <img class="navbar-brand" src="../imagenes/logo.png" alt="logo"/>
+    <img class="navbar-brand" src= "/imagenes/logo.png" alt="logo"width={"150px"}/>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
