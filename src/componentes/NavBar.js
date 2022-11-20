@@ -1,8 +1,9 @@
+import {Link} from "react-router-dom"
 import CartWidget from "./CartWidget";
 
 
 
-const NavBar=()=>{
+const NavBarComponent =()=> {
     return(
       <div ClassName="NavBar">
       <nav class="navbar navbar-expand-lg bg-light">
@@ -14,13 +15,21 @@ const NavBar=()=>{
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Acerca.js">Acerca de nuestros productos</a>
+          <Link
+          to="/" class="nav-link active" aria-current="page">
+            Home
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Productos.js">Productos</a>
+          <Link
+          to="/Category/" class="nav-link">Categorias
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Artista.js">La Artista</a>
+          <Link 
+          to="/itemDetailContainer"
+          class="nav-link">Articulos
+          </Link> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Contacto.js">Contacto</a>
@@ -34,4 +43,4 @@ const NavBar=()=>{
     );
   };
 
-export default NavBar;
+export default NavBarComponent;

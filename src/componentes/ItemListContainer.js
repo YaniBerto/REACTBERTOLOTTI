@@ -1,29 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
-import articulos from "../data/articulos";
+import {item} from "../mocks/item.mock";
 
+const ItemListContainer=()=>{
+  const {Category}= useParams();
+  const[articulos, setArticulos]= useState([]);
 
- 
+  useEffect(()=>{
+    new Promise((resolve)=>
+    setTimeout(()=>{
+      resolve(item);}, 2000)
+    ).then((data)=>{
+      if (Category){
+        const Categories = data.filter(
+          (articulos)=>articulos.Category === Category
+        );
+        setArticulos(Categories);
+      }else{
+        setArticulos(data);
+      }
+    });
+  },[Category]);
 
-const ItemListContainer = ({greeting})=>{
-
-  const [articles, setArticles] = useState([]);
-
-      const listaArticulos = new Promise((resolve)=>
-      setTimeout(() => {
-        resolve(articulos);
-      }, 2000)
-      );
-
-      listaArticulos.then((data) =>setArticles(data));
-    console.log(articles)
+  if(articulos.length === 0){
+    return <p>loading...</p>;
+  }
   return(
     <div>
-      <h2>{greeting}</h2>
-      <ItemList articulos={articles} />
+      <ItemList/>
     </div>
   );
-};
+} ;
 
     
 export default ItemListContainer;
