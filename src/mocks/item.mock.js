@@ -1,5 +1,5 @@
 import Colgante from "../imagenes/colgante_fases_luna.jpg";
-//import Aros from "../imagenes/aro_flor_violeta_claro.jpg"
+import Aros from "../imagenes/aro_flor_violeta_claro.jpg"
 
 export const item = [
     {
@@ -10,7 +10,7 @@ export const item = [
         Precio: 2500,},
       {
         id: "2",
-        img: process.env.PUBLIC_URL + "..imagenes/aro_flor_violeta_claro.jpg",
+        img: Aros,
         Category: "Aros",
         Descripcion: "Aro Flor Violeta",
         Precio: 1500,

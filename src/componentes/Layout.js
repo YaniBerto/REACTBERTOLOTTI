@@ -1,4 +1,4 @@
-import NavBarComponent from ".NavBar";
+import NavBarComponent from "./NavBar";
 
 export const Layout=({children})=>{
     return(

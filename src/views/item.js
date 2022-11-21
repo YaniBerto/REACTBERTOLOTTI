@@ -1,5 +1,5 @@
 import ItemDetailContainer from "../componentes/ItemDetailContainer";
-import {Layout} from "../components/Layout";
+import {Layout} from "../componentes/Layout";
 
 const ItemView = ()=>{
     return(
