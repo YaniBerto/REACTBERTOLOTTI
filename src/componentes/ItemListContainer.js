@@ -5,7 +5,7 @@ import {item} from "../mocks/item.mock";
 
 const ItemListContainer=()=>{
   const {Category}= useParams();
-  const[Articulos, setArticulos]= useState([]);
+  const[articulos, setArticulos]= useState([]);
 
   useEffect(()=>{
     new Promise((resolve)=>
@@ -14,7 +14,7 @@ const ItemListContainer=()=>{
     ).then((data)=>{
       if (Category){
         const Categories = data.filter(
-          (Articulos)=>Articulos.Category === Category
+          (articulos)=>articulos.Category === Category
         );
         setArticulos(Categories);
       }else{
@@ -23,12 +23,13 @@ const ItemListContainer=()=>{
     });
   },[Category]);
 
-  if(Articulos.length === 0){
+  if(articulos.length === 0){
     return <p>loading...</p>;
   }
   return(
     <div>
-      <ItemList/>
+      <ItemList articulos=
+      {articulos}/>
     </div>
   );
 } ;
