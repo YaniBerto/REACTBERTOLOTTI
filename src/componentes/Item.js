@@ -1,7 +1,7 @@
 
 const Item = ({articulo}) => {
     return( 
-        <div>
+        <div className="card">
         <li>{articulo.Descripcion}</li>
         <div style={{width: '18rem'}} class="card" />
   <img src={articulo.img} className="card-img-top" alt="..."/>

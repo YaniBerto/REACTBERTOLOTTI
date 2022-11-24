@@ -24,7 +24,7 @@ const ItemListContainer=()=>{
   },[Category]);
 
   if(articulos.length === 0){
-    return <p>loading...</p>;
+    return <p>cargando...</p>;
   }
   return(
     <div>

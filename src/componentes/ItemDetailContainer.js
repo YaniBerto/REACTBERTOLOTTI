@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import ItemDetail from "./ItemDetail";
 
 import {item as itemMock} from "../mocks/item.mock";  
@@ -13,7 +14,7 @@ const ItemDetailContainer = ()=>{
         );
     }, []);
     if (!item){
-        return<p>Loading...</p>;
+        return<p>Cargando...</p>;
     }
     return <ItemDetail item={item}/>;
 };
