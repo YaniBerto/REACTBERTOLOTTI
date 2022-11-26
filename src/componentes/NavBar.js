@@ -17,24 +17,19 @@ const NavBarComponent =()=> {
       <ul class="navbar-nav">
         <li class="nav-item">
           <Link
-          to="/" className="nav-link active" aria-current="page">
-            Home
+          to="/" class="nav-link active">Home
           </Link>
         </li>
         <li class="nav-item">
-          <Link
-          to="/Category/Colgantes" ClassName="nav-link active">Colgantes
+          <Link to="/Category/:Colgantes" Class="nav-link active">Colgantes
           </Link>
         </li>
         <li class="nav-item">
-          <Link
-          to="/Category/Aros" ClassName="nav-link">Aros
+          <Link to="/Category/:Aros" Class="nav-link">Aros
           </Link>
         </li>
         <li class="nav-item">
-          <Link 
-          to="/itemDetailContainer"
-          class="nav-link">Articulos
+          <Link to="/itemDetailContainer" class="nav-link">Articulos
           </Link> 
         </li>
         <li class="nav-item">

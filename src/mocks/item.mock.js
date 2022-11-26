@@ -8,7 +8,7 @@ import Marte from "../imagenes/marte.png";
 import FloresRosas from "../imagenes/setFloresRosas.png"
 
 
-export const item = [
+export const items = [
     {
         id: "1",
         img: ColganteLuna,
