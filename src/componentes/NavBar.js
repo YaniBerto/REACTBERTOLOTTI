@@ -21,25 +21,31 @@ const NavBarComponent =()=> {
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="/Category/:Colgantes" Class="nav-link active">Colgantes
+          <Link to="/Category/Colgantes" Class="nav-link active">Colgantes
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="/Category/:Aros" Class="nav-link">Aros
+          <Link to="/Category/Aros" Class="nav-link">Aros
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="/itemDetailContainer" class="nav-link">Articulos
+          <Link to="/Category/Set" class="nav-link">Sets
           </Link> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Contacto.js">Contacto</a>
+          <Link to="/Artista/" class="nav-link">La Artista
+          </Link> 
         </li>
+        <li class="nav-item">
+          <Link to = "/Contacto/" class="nav-link" >Contacto
+          </Link>
+          </li>
       </ul>
-    </div>
+    </div> <CartWidget/>
+
   </div>
 </nav>     
-            <CartWidget/>
+           
       </div>
     );
   };

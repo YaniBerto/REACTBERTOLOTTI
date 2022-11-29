@@ -1,10 +1,11 @@
 import {createBrowserRouter} from "react-router-dom";
-
 import App from "../App";
+import Artista from "../componentes/Artista";
+import Contacto from "../componentes/Contacto";
 import ItemDetailContainer from "../componentes/ItemDetailContainer";
-import ItemListContainer from "../componentes/ItemListContainer";
 import Cart from "../views/item";
-import Item from "../componentes/Item";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/category/:categoryid",
-        element: <ItemListContainer/>
+        element: <App/>
     },
     {
         path: "/item/:ItemDetailContainer",
@@ -25,6 +26,14 @@ export const router = createBrowserRouter([
     },
     {
         path: "/item/:id",
-        element: <Item />,
-    }
+        element: <ItemDetailContainer />,
+    },
+    {
+        path: "Artista",
+        element: <Artista/>
+    },
+    {
+    path: "Contacto",
+    element: <Contacto/>
+},
 ]);

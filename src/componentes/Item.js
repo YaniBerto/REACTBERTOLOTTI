@@ -1,6 +1,10 @@
+import {Link} from "react-router-dom";
+import count from "./itemCount";
+
 
 const Item = ({articulo}) => {
     return( 
+     
         <div className="card">
         <li>{articulo.Descripcion}</li>
         <div style={{width: '18rem'}} class="card" />
@@ -8,8 +12,14 @@ const Item = ({articulo}) => {
   <div class="card-body"/>
     <h5 class="card-title">{articulo.Descripcion}</h5>
     <p class="card-text">{articulo.Precio}</p>
-    <h3 class="btn btn-primary">Comprar</h3>
+    <div class="number">
+	<button className="handleDecrement">-</button>
+	<h1>{count}</h1>
+	<button class="handleAdd">+</button>
+</div>
+    <Link to = {`/item/${articulo.id}`} className = "btn btn-primary">Comprar</Link>
   </div>
+
 );
 };
 

@@ -1,11 +1,11 @@
-import {Layout} from "../componentes/Layout";
+import {NavBar} from "../componentes/NavBar";
 
-const CartViiew = () => {
+const CartView = () => {
     return(
-        <Layout>
+        <NavBar>
             <h1>Cart View</h1>
-        </Layout>
+        </NavBar>
     );
 };
 
-export default CartViiew;
+export default CartView;

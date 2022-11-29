@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-
 import ItemDetail from "./ItemDetail";
-
 import {items} from "../mocks/item.mock";  
 import { useParams } from "react-router-dom";
+import { Layout } from "./Layout";
+
 
 
 const ItemDetailContainer = ()=>{
@@ -22,7 +22,8 @@ const ItemDetailContainer = ()=>{
     if (!item){
         return<p>Cargando...</p>;
     }
-    return <ItemDetail item={item}/>;
+    return <Layout><ItemDetail item={item}/></Layout>;
+            
 };
 
 export default ItemDetailContainer;

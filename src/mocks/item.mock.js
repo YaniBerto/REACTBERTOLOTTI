@@ -14,13 +14,15 @@ export const items = [
         img: ColganteLuna,
         Category: "Colgantes",
         Descripcion: "Colgante Lunas",
-        Precio: 2500,},
+        Precio: 2500,
+        Stock: 5,},
       {
         id: "2",
         img: AroFlorVioleta,
         Category: "Aros",
         Descripcion: "Aro Flor Violeta",
         Precio: 1500,
+        Stock: 5,
       },
       {
         id: "3",
@@ -28,6 +30,7 @@ export const items = [
         Category: "Colgantes",
         Descripcion: "Colgante deforme",
         Precio: 2000,
+        Stock: 6,
       },
       {
         id: "4",
@@ -35,6 +38,7 @@ export const items = [
         Category: "Aros",
         Descripcion: "Aros atomo",
         Precio:2000,
+        Stock: 3,
       },
       {
         id: "5",
@@ -42,6 +46,7 @@ export const items = [
         Category: "Aros",
         Descripcion: "Aros con forma de maceta con cactus",
         Precio: 2500,
+        Stock: 15,
       },
       {
         id: "6",
@@ -49,6 +54,7 @@ export const items = [
         Category: "Colgante" ,
         Descripcion: "Colgante con forma de Lavanda",
         Precio: 3000,
+        Stock: 7,
       },
       {
         id: "7",
@@ -56,6 +62,7 @@ export const items = [
         Category: "Aros",
         Descripcion:"Aros con forma de Marte",
         Precio: 2700,
+        Stock: 2,
       },
       {
         id: "8",
@@ -63,6 +70,7 @@ export const items = [
         Category: "Set",
         Descripcion: "Set de aros y colgante Cerezo",
         Precio: 5000,
+        Stock: 15,
       },
       
 ];

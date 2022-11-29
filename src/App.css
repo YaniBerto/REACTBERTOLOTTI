@@ -1,9 +1,18 @@
+*
+{
+  margin:0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  font-family: 'Nerko One', cursive; 
+  font-size: large;
+}
 .App {
   width:95vw;
   display: flex;
   text-align: center;
-  font-family: Verdana; 
-  background-color: bisque;
+  
+  background-color: rgb(208, 243, 155);
 }
 .NavBar{
   width: 95vw;
@@ -23,13 +32,39 @@
 .nav-link{
   text-decoration: none;
 }
-
+span {cursor:pointer; }
+		.number{
+			margin:100px;
+		}
+		.handleDecrement, .handleAdd{
+			width:20px;
+			height:20px;
+			background: #f2f2f2;
+			border-radius:4px;
+			padding:8px 5px 8px 5px;
+			border: 1px solid #ddd;
+      border-radius: 30px;
+      display: inline-block;
+      vertical-align:middle;
+      justify-items: center;
+      
+		}
+		input{
+			height:34px;
+      width: 100px;
+      text-align: center;
+      font-size: 26px;
+			border:1px solid #ddd;
+			border-radius:4px;
+      display: inline-block;
+      vertical-align: middle;
+    }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-ul{
+li{
   list-style-type: none;
 }
 .cart{
@@ -41,6 +76,7 @@ ul{
   width: 450px;
   height: 450px;
 }
+
 
 @keyframes App-logo-spin {
   from {
