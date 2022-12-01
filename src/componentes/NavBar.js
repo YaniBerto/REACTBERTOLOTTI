@@ -37,6 +37,10 @@ const NavBarComponent =()=> {
           </Link> 
         </li>
         <li class="nav-item">
+          <Link to="/Acerca/" class="nav-link">Acerca
+          </Link> 
+        </li>
+        <li class="nav-item">
           <Link to = "/Contacto/" class="nav-link" >Contacto
           </Link>
           </li>

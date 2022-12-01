@@ -20,6 +20,7 @@
   flex-direction: row;
   justify-content: space-around;
   text-decoration: none;
+  font-size:xx-large;
 }
 .articulosPagina{
   display: flex;
@@ -29,14 +30,20 @@
   gap: 4px;
   width: 100vw;
 }
+.detalle{
+  display: flex;
+  justify-content: center;
+  
+  
+}
 .nav-link{
   text-decoration: none;
 }
-span {cursor:pointer; }
+.count{cursor:pointer; }
 		.number{
 			margin:100px;
 		}
-		.handleDecrement, .handleAdd{
+.handleDecrement, .handleAdd{
 			width:20px;
 			height:20px;
 			background: #f2f2f2;
@@ -49,7 +56,7 @@ span {cursor:pointer; }
       justify-items: center;
       
 		}
-		input{
+		h2{
 			height:34px;
       width: 100px;
       text-align: center;
@@ -76,7 +83,12 @@ li{
   width: 450px;
   height: 450px;
 }
-
+.card-text{
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+  line-height: 50px;
+}
 
 @keyframes App-logo-spin {
   from {
