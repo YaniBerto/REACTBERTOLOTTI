@@ -10,7 +10,7 @@ const ItemDetail = ({item})=> {
             <div>{item.Descripcion}</div>
             <img src={item.img}style= {{width: "250px"}}alt="Bijouterie"/>
             <ItemCount Stock={item.Stock}/>
-            <ItemCount initial={0}/>
+           
         
             
         </div>
