@@ -1,27 +1,41 @@
 import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
-import {items} from "../mocks/item.mock";
+import {} from "../mocks/item.mock";
+import {collection, doc, getDoc, getDocs, getFirestore} from "firebase/firestore";
+
 
 const ItemListContainer=()=>{
   const {categoryid}= useParams();
   const[articulos, setArticulos]= useState([]);
 
-  useEffect(()=>{
-    new Promise((resolve)=>
-    setTimeout(()=>{
-      resolve(items);}, 1000)
-    ).then((data)=>{
-      if (categoryid){
-        const Categories = data.filter(
-          (articulos)=>articulos.Category === categoryid
-        );
-        setArticulos(Categories);
-      }else{
-        setArticulos(data);
-      }
-    });
-  },[categoryid]);
+useEffect(()=>{
+  const db = getFirestore();
+  const Collection = collection(db, '');
+  getDocs(Collection).then((snapshot)=>{
+    const articulos = snapshot.docs.map((doc)=>({id: doc.id,
+      ...doc.data(),
+    }));
+      setArticulos(articulos);
+      console.log(articulos);
+  });
+},[]);
+
+//useEffect(()=>{
+  //  new Promise((resolve)=>
+    //setTimeout(()=>{
+      //resolve();}, 1000)
+    //).then((data)=>{
+      //if (categoryid){
+        //const Categories = data.filter(
+          //(articulos)=>articulos.Category === categoryid
+        //);
+        //setArticulos(Categories);
+      //}else{
+        //setArticulos(data);
+      //}
+    //});
+  //},[categoryid]);
 
   if(articulos.length === 0){
     return <p>cargando...</p>;

@@ -19,10 +19,10 @@ const ItemCount = ({Stock, initial, onAdd}) => {
  }
     }
 
-    const Comprar = () => {
+/*const Comprar = () => {
         onAdd(count);
         setCount(initial);
-    }
+    }*/
 
 
     useEffect(()=> {
@@ -39,7 +39,7 @@ const ItemCount = ({Stock, initial, onAdd}) => {
         <button onClick={handleDecrement}>-</button>
         <h2>{count}</h2>
         <button onClick={handleAdd}>+</button>
-        <button onClick={Comprar}></button>
+      {/*</div>button style= {{color: 'green'}} onClick={Comprar}</button> */}
     </div>
     );
 };

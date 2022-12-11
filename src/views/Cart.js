@@ -1,5 +1,9 @@
 import {NavBar} from "../componentes/NavBar";
 
+
+
+
+
 const CartView = () => {
     return(
         <NavBar>
@@ -9,3 +13,4 @@ const CartView = () => {
 };
 
 export default CartView;
+

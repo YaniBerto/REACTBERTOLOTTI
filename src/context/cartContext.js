@@ -1,4 +1,54 @@
-import { createContext} from "react";
-/*import {App} from "./App";*/
+import React, { createContext, useEffect, useState } from "react";
 
-export const cartContext = createContext([]);
+
+export const Context = createContext();
+
+export const CartContextProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+  const [qty, setQty] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    setQty(cart.reduce((total, item) => total + item.cantidad, 0))
+    setTotal(cart.reduce((total, item) => total + (item.cantidad * item.price), 0))
+  }, [cart])
+  
+
+  const addItem = (item, cantidad) => {
+    if (IsInCart(item.id)) {
+        const modificado = cart.map((articulo) => {
+        if (articulo.id === item.id) {
+          articulo.cantidad += cantidad;
+        }
+        return articulo;
+      });
+      setCart(modificado);
+    } else {
+      setCart([...cart, { ...item, cantidad }]);
+    }
+    setQty(qty + cantidad);
+    setTotal(total + (item.price * cantidad));
+  };
+
+  const deleteItem = (id) => {
+    const found = cart.find(articulo => articulo.id === id);
+    setCart(cart.filter((item) => item.id !== id));
+    setQty( qty - found.cantidad)
+    setTotal(total - (found.price * found.cantidad))
+  };
+
+  const IsInCart = (id) => cart.some((item) => item.id === id);
+
+  const clear = () => {
+    setCart([]);
+    setQty(0);
+    setTotal(0);
+  };
+
+  return (
+    <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart }}>
+      {children}
+    </Context.Provider>
+  );
+};
+
