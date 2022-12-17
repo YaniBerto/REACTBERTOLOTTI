@@ -6,24 +6,26 @@ import { Layout } from "./Layout";
 
 
 
+
 const ItemDetailContainer = ()=>{
     const [item,setItem]= useState(null);
-    
-    const {id} = useParams();
+        const {id} = useParams();
 
     useEffect(()=>{
-        new Promise((resolve)=>
+
+    new Promise((resolve)=>
         setTimeout(()=>{
             const itemFiltrado = items.find((item)=>item.id === id);
-            resolve(itemFiltrado);
+        resolve(itemFiltrado);
         },1000)
         ).then((data)=>setItem(data));
-    }, [id]);
-    if (!item){
+        }, [id]);
+            if (!item){
         return<p>Cargando...</p>;
     }
-    return <Layout><ItemDetail item={item}/></Layout>;
-            
-};
+return  <Layout>
+            <ItemDetail item={item}/>
+        </Layout>;
+}
 
 export default ItemDetailContainer;

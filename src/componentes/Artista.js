@@ -8,7 +8,7 @@ return <Layout>
   <img src = {Giuli} alt = "" style={{width:"550px"}}></img>
   <div class="card-body">
     <p class="card-text">
-        "Giulia Seminara es la creadora de éstas piezas únicas en el mercado tanto a nivel regional como nacional."</p>
+        "Giulia Seminara es Rosarina y es la creadora de éstas piezas únicas en el mercado tanto a nivel regional como nacional. Hace años que comenzó a formarse en el mundo del origami y filigrana perfeccionando la técnica"</p>
   </div>
 
 </Layout>

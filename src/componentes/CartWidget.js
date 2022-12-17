@@ -1,10 +1,10 @@
 import cart from "./shoppingCart.png"
 import React, { useContext } from "react";
-import { Context } from "../context/cartContext";
+import { CartContext } from "../context/CartContext";
 
 
 export const CartWidget = ()=> {
-    const { qty } = useContext(Context);
+    const { qty } = useContext(CartContext);
     return(
         <>
         <p>{qty}</p>

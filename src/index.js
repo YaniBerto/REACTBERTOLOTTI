@@ -6,7 +6,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {router} from "./router";
-import { CartContextProvider } from './context/cartContext';
+import { CartContextProvider } from './context/CartContext';
 
 
 import { initializeApp } from "firebase/app";

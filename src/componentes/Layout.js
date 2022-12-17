@@ -1,4 +1,4 @@
-import { CartContextProvider } from "../context/cartContext";
+import { CartContextProvider } from "../context/CartContext";
 import NavBarComponent from "./NavBar";
 
 

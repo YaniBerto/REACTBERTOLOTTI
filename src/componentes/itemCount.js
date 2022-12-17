@@ -1,47 +1,24 @@
-import React, {useState, useEffect} from "react";
-
-
-const ItemCount = ({Stock, initial, onAdd}) => {
-
-    const [count, setCount] = useState(initial);
-
-    const handleAdd = () => {
-        if(count < Stock) {
-            setCount(count+1);
-        } else {
-            alert("Sin stock");
-        }
-    }
-
-    const handleDecrement = () => {
- if (count>0){
-    setCount(count - 1)
- }
-    }
-
-/*const Comprar = () => {
-        onAdd(count);
-        setCount(initial);
-    }*/
-
-
-    useEffect(()=> {
-
-        console.log("Se montó el ItemCount");
-    }, []);
-
-    useEffect(()=> {
-        console.log("Se actualiza el estado!")
-    }, [count]);
-
+export const ItemCount = ({ count, handleCount }) => {
     return (
-    <div className="count">
-        <button onClick={handleDecrement}>-</button>
-        <h2>{count}</h2>
-        <button onClick={handleAdd}>+</button>
-      {/*</div>button style= {{color: 'green'}} onClick={Comprar}</button> */}
-    </div>
+      <div className="flex mt-10 w-4/5 bg-gray-200 rounded">
+        <button
+          onClick={() => handleCount("minus")}
+          className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        >
+          -
+        </button>
+        <span
+          id="counter"
+          className="flex flex-1 justify-center items-center mx-4 font-bold"
+        >
+          {count}
+        </span>
+        <button
+          onClick={() => handleCount("plus")}
+          className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        >
+          +
+        </button>
+      </div>
     );
-};
-
-export default ItemCount;
+  };

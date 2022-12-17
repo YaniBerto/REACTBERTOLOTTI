@@ -11,8 +11,8 @@ const ItemListContainer=()=>{
 
 useEffect(()=>{
   const db = getFirestore();
-  const Collection = collection(db, '');
-  getDocs(Collection).then((snapshot)=>{
+  const queryRef = collection(db, 'items');
+  getDocs(queryRef).then((snapshot)=>{
     const articulos = snapshot.docs.map((doc)=>({id: doc.id,
       ...doc.data(),
     }));

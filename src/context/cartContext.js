@@ -1,54 +1,64 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-
-export const Context = createContext();
-
+export const CartContext = createContext([]);
 export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [qty, setQty] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [productsAdded, setProductsAdded] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
-    setQty(cart.reduce((total, item) => total + item.cantidad, 0))
-    setTotal(cart.reduce((total, item) => total + (item.cantidad * item.price), 0))
-  }, [cart])
-  
+    const amount = productsAdded
+      .map((product) => parseInt(product.item.price) * product.quantityAdded)
+      .reduce((partialSum, a) => partialSum + a, 0);
+    setTotalAmount(amount);
+  }, [productsAdded]);
 
-  const addItem = (item, cantidad) => {
-    if (IsInCart(item.id)) {
-        const modificado = cart.map((articulo) => {
-        if (articulo.id === item.id) {
-          articulo.cantidad += cantidad;
-        }
-        return articulo;
-      });
-      setCart(modificado);
+  function addItem(item, quantity) {
+    const isAlreadyAdded = isInCart(item.id);
+    if (isAlreadyAdded) {
+      setProductsAdded((prevState) =>
+        prevState.map((productAdded) =>
+          productAdded.item.id === item.id
+            ? {
+                ...productAdded,
+                quantityAdded: productAdded.quantityAdded + quantity,
+              }
+            : productAdded
+        )
+      );
     } else {
-      setCart([...cart, { ...item, cantidad }]);
+      setProductsAdded((prevState) =>
+        prevState.concat({ item, quantityAdded: quantity })
+      );
     }
-    setQty(qty + cantidad);
-    setTotal(total + (item.price * cantidad));
-  };
+  }
 
-  const deleteItem = (id) => {
-    const found = cart.find(articulo => articulo.id === id);
-    setCart(cart.filter((item) => item.id !== id));
-    setQty( qty - found.cantidad)
-    setTotal(total - (found.price * found.cantidad))
-  };
+  function removeItem(itemId) {
+    setProductsAdded((prevState) =>
+      prevState.filter((product) => product.item.id !== itemId)
+    );
+  }
 
-  const IsInCart = (id) => cart.some((item) => item.id === id);
+  function clear() {
+    setProductsAdded([]);
+    setTotalAmount(0);
+  }
 
-  const clear = () => {
-    setCart([]);
-    setQty(0);
-    setTotal(0);
-  };
+  function isInCart(itemId) {
+    return Boolean(productsAdded.find((product) => product.item.id === itemId));
+  }
 
   return (
-    <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart }}>
+    <CartContext.Provider
+      value={{
+        addItem,
+        removeItem,
+        clear,
+        isInCart,
+        productsAdded,
+        totalAmount,
+      }}
+    >
       {children}
-    </Context.Provider>
+    </CartContext.Provider>
   );
 };
-
