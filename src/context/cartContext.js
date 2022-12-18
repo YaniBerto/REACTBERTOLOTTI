@@ -13,7 +13,7 @@ export const CartContextProvider = ({ children }) => {
   }, [productsAdded]);
 
   function addItem(item, quantity) {
-    const isAlreadyAdded = isInCart(item.id);
+    const isAlreadyAdded = IsInCart(item.id);
     if (isAlreadyAdded) {
       setProductsAdded((prevState) =>
         prevState.map((productAdded) =>
@@ -43,7 +43,7 @@ export const CartContextProvider = ({ children }) => {
     setTotalAmount(0);
   }
 
-  function isInCart(itemId) {
+  function IsInCart(itemId) {
     return Boolean(productsAdded.find((product) => product.item.id === itemId));
   }
 
@@ -53,7 +53,7 @@ export const CartContextProvider = ({ children }) => {
         addItem,
         removeItem,
         clear,
-        isInCart,
+        IsInCart,
         productsAdded,
         totalAmount,
       }}

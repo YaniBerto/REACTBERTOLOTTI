@@ -46,7 +46,7 @@
 .handleDecrement, .handleAdd{
 			width:20px;
 			height:20px;
-			background: #f2f2f2;
+			background: #8a8888;
 			border-radius:4px;
 			padding:8px 5px 8px 5px;
 			border: 1px solid #ddd;
@@ -80,9 +80,9 @@ li{
 }
 
 .card-img-top{
-  width: 450px;
-  height: 450px;
-}
+  width: 350px;
+  height: 350px;
+} 
 .card-text{
   display: flex;
   margin: 20px;

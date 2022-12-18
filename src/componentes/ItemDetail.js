@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
   }
 
   function handleAdd() {
-    if (currentStock < count) alert("No hay stock de este producto");
+    if (currentStock < count) alert("No hay stock");
     else {
       setCurrentStock(currentStock - count);
       addItem(item, count);
@@ -24,24 +24,23 @@ const ItemDetail = ({ item }) => {
   }
 
   function handleCheckout() {
-    navigate("/cart");
+    navigate("/Cart");
   }
   return (
     <div className="flex w-5/6 bg-white rounded p-10 transition-all shadow hover:shadow-lg">
-     
+
       <div className="flex justify-center w-1/2">
-        <img className="max-h-[500px]" src={item.img} alt={item.name} />
+        <img className="" width="500" height="500"src={item.img} alt={item.name} />
       </div>
 
       {/* Item description */}
       <div className="flex flex-col justify-center pl-10">
-        <h2 className="text-3xl font-bold text-gray-800">{item.name}</h2>
-        <p className="mt-4 text-xl">{item.description}</p>
+          <p className="mt-4 text-xl">{item.descripcion}</p>
         <span className="mt-4 text-xl">
-          Price: <strong className="text-gray-800">${item.price}</strong>
+          Precio: <strong className="text-gray-800">${item.precio}</strong>
         </span>
         {currentStock > 0 && (
-          <p className="text-sm">En Stock: {currentStock}</p>
+          <p className="text-sm">Stock: {currentStock}</p>
         )}
 
         <div className="flex flex-col flex-1 items-center">
@@ -54,7 +53,7 @@ const ItemDetail = ({ item }) => {
           <div className="w-full flex flex-col items-center">
             <button
               onClick={handleAdd}
-              className="w-4/5 bg-gray-200 px-4 py-2 mt-2 rounded disabled:opacity-40"
+              className="btn btn-secondary"
               disabled={currentStock === 0}
             >
               Agregar al carrito
@@ -62,7 +61,7 @@ const ItemDetail = ({ item }) => {
             <button
               disabled={!IsInCart(item.id)}
               onClick={handleCheckout}
-              className="w-4/5 bg-gray-800 text-white px-4 py-2 mt-2 rounded disabled:opacity-50"
+              className="btn btn-secondary"
             >
               Finalizar Compra
             </button>

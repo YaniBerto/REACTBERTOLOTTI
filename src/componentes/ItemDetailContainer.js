@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import {items} from "../mocks/item.mock";  
+
 import { useParams } from "react-router-dom";
 import { Layout } from "./Layout";
+import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 
 
 const ItemDetailContainer = ()=>{
     const [item,setItem]= useState(null);
-        const {id} = useParams();
+    const {id} = useParams();
 
     useEffect(()=>{
+        const db= getFirestore()
+        const coleccionProd = collection(db, "items")
 
-    new Promise((resolve)=>
-        setTimeout(()=>{
-            const itemFiltrado = items.find((item)=>item.id === id);
-        resolve(itemFiltrado);
-        },1000)
-        ).then((data)=>setItem(data));
-        }, [id]);
+        const referenciaDoc = doc(coleccionProd, id)
+        
+        getDoc(referenciaDoc)
+        .then((result)=>{
+            setItem({
+            id:result.id,
+            ...result.data()
+        })
+        })
+        .catch((error)=> console.log(error))
+        
+        }, [id])
             if (!item){
         return<p>Cargando...</p>;
     }

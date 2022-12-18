@@ -4,7 +4,9 @@ import Artista from "../componentes/Artista";
 import Acerca from "../componentes/Acerca";
 import Contacto from "../componentes/Contacto";
 import ItemDetailContainer from "../componentes/ItemDetailContainer";
-import Cart from "../views/item";
+import Cart from "../views/Cart";
+
+import ItemListContainer from "../componentes/ItemListContainer";
 
 
 
@@ -14,12 +16,12 @@ export const router = createBrowserRouter([
         element: <App />
     },
     {
-        path: "/category/:categoryid",
-        element: <App/>
+        path: "/category/:categoryId",
+        element: <ItemListContainer/>
     },
-  
+
     {
-        path: "/cart",
+        path: "/Cart",
         element: <Cart/>
     },
     {
