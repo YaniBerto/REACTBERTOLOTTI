@@ -12,7 +12,7 @@ const CartWidget = () => {
         <div>
             <Link to="/Cart" className="relative">    
                 <button>
-                        <img src={cart} alt=""/>
+                        <img className="cart" src={cart} alt=""/>
                 </button>{' '} 
                 {count > 0 && (
                 <span className="absolute w-4 h-4 bottom-0 -right-2 rounded-full flex justify-center items-center bg-white/70">

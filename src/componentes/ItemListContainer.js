@@ -5,6 +5,7 @@ import ItemList from "./ItemList";
 import {collection, getDocs, query, where, getFirestore} from "firebase/firestore";
 
 
+
 const ItemListContainer=()=>{
   const {categoryId}= useParams();
   const[articulos, setArticulos]= useState([]);
@@ -39,10 +40,12 @@ useEffect(()=>{
     return <p>cargando...</p>;
   }
   return(
-    <div>
+  <div>
       <ItemList articulos=
       {articulos}/>
-    </div>
+      
+  </div>
+
   );
 } ;
 

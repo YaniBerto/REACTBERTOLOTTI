@@ -25,7 +25,7 @@ const NavBarComponent =()=> {
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="/Category/Aros" Class="nav-link">Aros
+          <Link to="/Category/Aros/" Class="nav-link">Aros
           </Link>
         </li>
         <li class="nav-item">
@@ -49,7 +49,7 @@ const NavBarComponent =()=> {
 
   </div>
 </nav>     
-           
+
       </div>
     );
   };

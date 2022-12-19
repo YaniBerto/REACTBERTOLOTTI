@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Layout } from "../componentes/Layout";
 import { CartContext } from "../context/CartContext";
 import {Link} from 'react-router-dom'
+import checkout from "../componentes/checkout";
 
 const CartView = () => {
     const{productsAdded, removeItem, clear} = useContext(CartContext)
@@ -27,7 +28,8 @@ const CartView = () => {
                         )
                     })}
                 <button onClick={clear}>Vaciar carrito</button>
-                <button>Terminar Compra</button>
+                
+                <button onClick={checkout}>Terminar Compra</button>
                 </div>
             </div>
            }

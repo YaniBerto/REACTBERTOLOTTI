@@ -1,14 +1,17 @@
 import Item from "./Item";
 
+
 const ItemList = ({articulos}) => {
     return(
-        <div className="articulosPagina">
         
+        <div className="articulosPagina">
+
             {articulos.map((Articulo) => (
                 <Item key = {Articulo.id} articulo = {Articulo}/>
+
             ))}
-        
         </div> 
+        
     );
     };
 

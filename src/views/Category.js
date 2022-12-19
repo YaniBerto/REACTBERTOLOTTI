@@ -8,17 +8,18 @@ import {Layout} from "../componentes/Layout";
 
 
 const CategoryView =()=>{
+    
     const { Category } = useParams();
     const Categories = Item.filter((articulo) => articulo.Category === Category);
 
     return(
-        <Layout>
-            <ItemListContainer/>
-            {Categories.map((articulo)=>(
-                <Item articulo={articulo}/>
+            <Layout>
+                <ItemListContainer/>
+                    {Categories.map((articulo)=>(
+                    <Item articulo={articulo}/>
             ))}
-        </Layout>
-    );
+            </Layout>
+    )
 };
 
 export default CategoryView;
