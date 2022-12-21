@@ -7,12 +7,12 @@ export const CartContextProvider = ({ children }) => {
 
   useEffect(() => {
     const amount = productsAdded
-      .map((product) => parseInt(product.item.price) * product.quantityAdded)
+      .map((product) => parseInt(product.item.precio) * product.quantityAdded)
       .reduce((partialSum, a) => partialSum + a, 0);
     setTotalAmount(amount);
 
   }, [productsAdded]);
-
+  console.log(totalAmount)
   function addItem(item, quantity) {
     const isAlreadyAdded = IsInCart(item.id);
     if (isAlreadyAdded) {

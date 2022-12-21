@@ -11,6 +11,7 @@ return <Layout>
   <label for="exampleFormControlTextarea1" class="form-label">Consulta:</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea>
 </div>
+<button onClick={alert("Formulario Enviado")}>Enviar Formulario</button>
 </Layout>
 };
 

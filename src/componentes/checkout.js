@@ -104,7 +104,7 @@ const CheckoutView = () => {
         </div>
         <div className='col-md-2'></div>
         <div>
-          Total: <strong>{totalAmount()}</strong>
+          Total: <strong>${totalAmount}</strong>
         </div>
         <Button
           type="submit"

@@ -3,10 +3,6 @@ import Item from "../componentes/Item";
 import ItemListContainer from "../componentes/ItemListContainer";
 import {Layout} from "../componentes/Layout";
 
-
-
-
-
 const CategoryView =()=>{
     
     const { Category } = useParams();
