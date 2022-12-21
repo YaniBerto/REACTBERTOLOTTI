@@ -6,7 +6,7 @@ import Logo from "../imagenes/logo.png";
 
 const NavBarComponent =()=> {
     return(
-      <div ClassName="NavBar">
+      <div className="NavBar">
       <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <img className="navbar-brand" src= {Logo} alt="logo"width={"150px"}/>
@@ -29,7 +29,7 @@ const NavBarComponent =()=> {
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="/Category/Set" class="nav-link">Sets
+          <Link to="Category/Set" class="nav-link">Sets
           </Link> 
         </li>
         <li class="nav-item">

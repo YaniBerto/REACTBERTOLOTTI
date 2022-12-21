@@ -10,6 +10,7 @@ export const CartContextProvider = ({ children }) => {
       .map((product) => parseInt(product.item.price) * product.quantityAdded)
       .reduce((partialSum, a) => partialSum + a, 0);
     setTotalAmount(amount);
+
   }, [productsAdded]);
 
   function addItem(item, quantity) {

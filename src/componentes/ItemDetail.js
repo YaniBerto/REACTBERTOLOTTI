@@ -8,10 +8,10 @@ const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
-  const maxQuantity = currentStock;
+  const maxquantity = currentStock;
 
   function handleCount(type) {
-    if (type === "plus" && count < maxQuantity) setCount(count + 1);
+    if (type === "plus" && count < maxquantity) setCount(count + 1);
     if (type === "minus" && count > 1) setCount(count - 1);
   }
 
@@ -27,15 +27,15 @@ const ItemDetail = ({ item }) => {
     navigate("/Cart");
   }
   return (
-    <div className="flex w-5/6 bg-white rounded p-10 transition-all shadow hover:shadow-lg">
+    <div className="item">
 
       <div className="flex justify-center w-1/2">
         <img className="" width="500" height="500"src={item.img} alt={item.name} />
       </div>
 
-      {/* Item description */}
-      <div className="flex flex-col justify-center pl-10">
-          <p className="mt-4 text-xl">{item.descripcion}</p>
+      
+      <div className="">
+          <p className="text-xl">{item.descripcion}</p>
         <span className="mt-4 text-xl">
           Precio: <strong className="text-gray-800">${item.precio}</strong>
         </span>
@@ -48,9 +48,9 @@ const ItemDetail = ({ item }) => {
           {currentStock > 0 ? (
             <ItemCount count={count} handleCount={handleCount} />
           ) : (
-            <span className="text-red-500 mt-10">Sin stock</span>
+            <span>Sin stock</span>
           )}
-          <div className="w-full flex flex-col items-center">
+          <div>
             <button
               onClick={handleAdd}
               className="btn btn-secondary"

@@ -2,22 +2,22 @@ import { useContext } from "react";
 import { Layout } from "../componentes/Layout";
 import { CartContext } from "../context/CartContext";
 import {Link} from 'react-router-dom'
-import checkout from "../componentes/checkout";
+
 
 const CartView = () => {
-    const{productsAdded, removeItem, clear} = useContext(CartContext)
-    console.log('carrito',productsAdded)
+    const{productsAdded, removeItem, clear, totalAmount} = useContext(CartContext)
+    
     return(
         <Layout>
-           {
+    {
             productsAdded.length === 0 
             ? <div>
-                <p>Tu carrito esta vacio!</p>
+                <p>Tu carrito esta vacio</p>
                 <Link to='/'>Ir a comprar!</Link>
             </div>
             :<div>
                 <h1>Tu Carrito</h1>
-                <div>
+                <div className="carrito">
                     {productsAdded.map((item)=>{
                         return(
                             <div style={{display:'flex'}} key={item.item.id}>
@@ -28,11 +28,11 @@ const CartView = () => {
                         )
                     })}
                 <button onClick={clear}>Vaciar carrito</button>
-                
-                <button onClick={checkout}>Terminar Compra</button>
+                <span> {totalAmount}</span>
+                <button><Link to={'/Checkout'}>Terminar Compra</Link></button>
                 </div>
             </div>
-           }
+        }
         </Layout>
     );
 };

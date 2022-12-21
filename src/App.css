@@ -8,20 +8,15 @@
   font-size: large;
 }
 .App {
-  width:95vw;
+  margin: 15%;
+  padding: 15%;
+  width:100vw;
   display: flex;
   text-align: center;
   
   background-color: rgb(208, 243, 155);
 }
-.NavBar{
-  width: 95vw;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-decoration: none;
-  font-size:xx-large;
-}
+
 .articulosPagina{
   display: flex;
   flex-direction: row;
@@ -31,6 +26,7 @@
   width: 100vw;
 }
 .detalle{
+  padding: 20%;
   display: flex;
   justify-content: center;
   
@@ -78,7 +74,13 @@ li{
   height: 50px;
   width: 80px;
 }
+.carrito{
 
+  padding:5%;
+}
+.item{
+  padding: 10%;
+}
 .card-img-top{
   width: 350px;
   height: 350px;

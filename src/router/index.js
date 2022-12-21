@@ -5,8 +5,9 @@ import Acerca from "../componentes/Acerca";
 import Contacto from "../componentes/Contacto";
 import ItemDetailContainer from "../componentes/ItemDetailContainer";
 import Cart from "../views/Cart";
-
 import ItemListContainer from "../componentes/ItemListContainer";
+import Checkout from "../componentes/Checkout";
+
 
 
 
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
         element: <App />
     },
     {
-        path: "/category/:categoryId",
+        path: "/Category/:categoryId",
         element: <ItemListContainer/>
     },
 
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
     {
         path: "/item/:id",
         element: <ItemDetailContainer />,
+    },
+    {
+        path: "Checkout",
+        element: <Checkout/>
     },
     {
         path: "Artista",
