@@ -29,12 +29,12 @@ const ItemDetail = ({ item }) => {
   return (
     <div className="item">
 
-      <div className="flex justify-center w-1/2">
+      <div className="card">
         <img className="" width="500" height="500"src={item.img} alt={item.name} />
       </div>
 
       
-      <div className="">
+      <div className="containerItemDetail">
           <p className="text-xl">{item.descripcion}</p>
         <span className="mt-4 text-xl">
           Precio: <strong className="text-gray-800">${item.precio}</strong>
@@ -43,14 +43,14 @@ const ItemDetail = ({ item }) => {
           <p className="text-sm">Stock: {currentStock}</p>
         )}
 
-        <div className="flex flex-col flex-1 items-center">
+        <div className="containerItemDetail">
         
           {currentStock > 0 ? (
             <ItemCount count={count} handleCount={handleCount} />
           ) : (
             <span>Sin stock</span>
           )}
-          <div>
+          <div className="">
             <button
               onClick={handleAdd}
               className="btn btn-secondary"

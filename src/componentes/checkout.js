@@ -4,7 +4,7 @@ import { Layout } from "./Layout";
 import { CartContext } from "../context/CartContext";
 import Button from 'react-bootstrap/Button';
 import { addDoc, collection, doc, getFirestore, updateDoc } from "firebase/firestore";
-
+import swal from 'sweetalert';
 
 
 const CheckoutView = () => {
@@ -61,7 +61,7 @@ const CheckoutView = () => {
           .then(() => {
             clear();
             setIsLoading(false);
-            alert("Compra terminada");
+            swal({text: "Compra terminada"});
             navigate("/");
           })
           .catch((err) => console.error(err));
@@ -107,6 +107,7 @@ const CheckoutView = () => {
           Total: <strong>${totalAmount}</strong>
         </div>
         <Button
+          style={{background: '#f48fb1', border: 'none'}}
           type="submit"
           className="rounded-lg p-2 bg-gray-800 text-white disabled:opacity-50"
           disabled={isLoading}

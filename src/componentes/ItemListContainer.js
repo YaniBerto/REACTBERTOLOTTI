@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
 //import {} from "../mocks/item.mock";
 import {collection, getDocs, query, where, getFirestore} from "firebase/firestore";
+import { Layout } from "./Layout";
 
 
 
@@ -41,10 +42,11 @@ useEffect(()=>{
   }
   return(
   <div>
+    <Layout>
       <ItemList articulos=
       {articulos}/>
-      
-  </div>
+      </Layout>
+     </div>
 
   );
 } ;

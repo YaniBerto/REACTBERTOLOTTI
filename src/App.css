@@ -13,15 +13,26 @@
   width:100vw;
   display: flex;
   text-align: center;
-  
   background-color: rgb(208, 243, 155);
 }
+.containerHome{
+  box-sizing: border-box;
+  border: #8a8888;
+  
+}
+.sticky-top absolute
+{
+  position: absolute;
+  text-decoration: none;
 
+}
 .articulosPagina{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  border: #8a8888;
   gap: 4px;
   width: 100vw;
 }
@@ -29,8 +40,10 @@
   padding: 20%;
   display: flex;
   justify-content: center;
-  
-  
+}
+.containerContacto{
+  margin: 20px;
+  padding: 20px;
 }
 .nav-link{
   text-decoration: none;
@@ -62,24 +75,54 @@
       display: inline-block;
       vertical-align: middle;
     }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 li{
   list-style-type: none;
 }
+.containerCart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+
+}
+
 .cart{
-  height: 50px;
+  height: 80px;
   width: 80px;
+  border: none;
+  
 }
 .carrito{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding:5%;
+}
+.btn btn-secondary{
+  border-radius: 50%;
+}
+
+.containerItemDetail
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5px;
+}
+.containerItem{
+  display: flex;
+  justify-content: space-around;
 }
 .item{
   padding: 10%;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
 }
 .card-img-top{
   width: 350px;
@@ -92,11 +135,3 @@ li{
   line-height: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -17,7 +17,7 @@ const CartView = () => {
             </div>
             :<div>
                 <h1>Tu Carrito</h1>
-                <div className="carrito">
+                <div className="containerCart">
                     {productsAdded.map((item)=>{
                         return(
                             <div style={{display:'flex'}} key={item.item.id}>
@@ -26,12 +26,16 @@ const CartView = () => {
                                 <button className = "btn btn-secondary" onClick={()=> removeItem(item.item.id)}>Borrar Articulo</button>
                             </div>
                         )
-                    })}
-                <button onClick={clear}>Vaciar carrito</button>
-                <span> {totalAmount}</span>
-                <button><Link to={'/Checkout'}>Terminar Compra</Link></button>
+                    })} 
+
+
+                <button className="btn btn-secondary"onClick={clear}>Vaciar carrito</button>
+
+                <button className="btn btn-secondary"><Link style={{textDecoration: 'none', color: 'white' }}to={'/Checkout'}>Terminar Compra</Link></button>
+                <span>${totalAmount}</span>
+                    </div>
                 </div>
-            </div>
+            
         }
         </Layout>
     );

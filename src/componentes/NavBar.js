@@ -29,7 +29,7 @@ const NavBarComponent =()=> {
           </Link>
         </li>
         <li class="nav-item">
-          <Link to="Category/Set" class="nav-link">Sets
+          <Link to="/Category/Set" class="nav-link">Sets
           </Link> 
         </li>
         <li class="nav-item">
