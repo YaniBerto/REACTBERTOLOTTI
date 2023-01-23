@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { ItemCount } from "./itemCount";
+import React from "react";
 
 const ItemDetail = ({ item }) => {
   const { addItem, IsInCart } = useContext(CartContext);

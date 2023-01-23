@@ -1,4 +1,5 @@
 import { Layout } from "./Layout";
+import React from "react";
 
 const Acerca =()=> {
     return <Layout>

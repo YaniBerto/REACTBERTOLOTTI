@@ -5,7 +5,7 @@ import { CartContext } from "../context/CartContext";
 import Button from 'react-bootstrap/Button';
 import { addDoc, collection, doc, getFirestore, updateDoc } from "firebase/firestore";
 import swal from 'sweetalert';
-
+import React from "react";
 
 const CheckoutView = () => {
   const [isLoading, setIsLoading] = useState(false);

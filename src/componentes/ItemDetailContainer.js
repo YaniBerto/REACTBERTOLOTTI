@@ -4,7 +4,7 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { Layout } from "./Layout";
 import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
-
+import React from "react";
 
 
 

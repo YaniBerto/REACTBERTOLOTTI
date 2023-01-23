@@ -1,6 +1,6 @@
 import { Layout } from "./Layout";
 import swal from 'sweetalert';
-
+import React from "react";
 
 const Contacto =()=> {
 return <Layout>

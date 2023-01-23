@@ -1,3 +1,5 @@
+import React from "react";
+
 export const ItemCount = ({ count, handleCount }) => {
     return (
       <div className="flex mt-10 w-4/5 bg-gray-200 rounded">

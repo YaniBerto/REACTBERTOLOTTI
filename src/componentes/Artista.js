@@ -1,5 +1,6 @@
 import { Layout } from "./Layout";
 import Giuli from "../imagenes/Giuli.png";
+import React from "react";
 
 const Artista =()=> {
 return <Layout>
